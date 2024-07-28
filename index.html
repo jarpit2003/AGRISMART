@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmtech - Transforming Smallholder Farming</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        .container {
+            display: grid;
+            min-height: 100vh;
+            grid-template-areas:
+                "header"
+                "content1"
+                "content2"
+                "content3"
+                "content4"
+                "content5"
+                "content6"
+                "footer";
+            grid-template-columns: 1fr;
+            grid-template-rows: auto repeat(6, auto) auto;
+        }
+
+        .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        #header {
+            grid-area: header;
+            background-color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #content1 {
+            grid-area: content1;
+            position: relative;
+            height: calc(100vh - 64px);
+        }
+
+        #content1 .bg-image {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: url('/deepak-kumar-sAe8RXxkQzw-unsplash.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        #content1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        #content1 .content {
+            position: relative;
+            z-index: 2;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        #content2 {
+            grid-area: content2;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #content2 .animated-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 120%;
+            height: 120%;
+            background-color: rgba(0, 128, 0, 0.1);
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            animation: pulse 4s infinite;
+            z-index: 0;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.4;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.1);
+                opacity: 0.6;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.4;
+            }
+        }
+
+        #content2 .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333333;
+            margin-bottom: 1rem;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            border-radius: 12px 12px 0 0;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .card-content p {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="item flex items-center justify-between p-4" id="header">
+            <div class="font-bold text-2xl text-green-600">Farmtech</div>
+            <nav class="hidden md:flex">
+                <ul class="flex gap-6 text-lg">
+                    <li><a href="#" class="hover:text-green-600">Home</a></li>
+                    <li><a href="#" class="hover:text-green-600">Dashboard</a></li>
+                    <li><a href="#" class="hover:text-green-600">Marketplace</a></li>
+                    <li><a href="/index2.html" class="hover:text-green-600">Login</a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden">Menu</button>
+        </header>
+
+        <div class="item relative" id="content1">
+            <div class="bg-image"></div>
+            <div class="content">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Empowering Smallholder Farmers</h1>
+                <p class="text-xl md:text-2xl mb-8">Transforming agriculture through innovative technology</p>
+                <a href="#" class="bg-green-600 text-white px-6 py-3 rounded-full text-lg hover:bg-green-700 transition duration-300">Get Started</a>
+            </div>
+        </div>
+
+        <div class="item relative bg-white" id="content2">
+            <div class="animated-box"></div>
+            <div class="content max-w-5xl mx-auto">
+                <h2 class="section-title text-center mb-12">Our Vision</h2>
+                <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                    <div class="flex-1">
+                        <p class="text-xl text-gray-700 leading-relaxed">Transforming smallholder farming through tech-driven sustainable solutions. We aim to empower farmers with the tools and knowledge they need to thrive in the modern agricultural landscape.</p>
+                    </div>
+                    <div class="flex-1 h-80 w-full md:w-1/2 bg-cover bg-center rounded-lg shadow-xl" style="background-image: url('/a2c77c05492aa6037bcf76482cf5d1ed.jpg');"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="item bg-gray-100" id="content3">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="section-title text-center mb-12">Our Solutions</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="card">
+                        <img src="/8d77e623abb5e8bf9c0a521d82402c97rg.jpg" class="w-full h-48 object-cover" alt="Smart Farming Tools">
+                        <div class="card-content">
+                            <h3 class="text-xl font-semibold text-gray-800">Smart Farming</h3>
+                            <p class="text-gray-600">Cutting-edge technologies to optimize crop yield and resource management.</p>
+                            <a href="#" class="text-green-600 hover:underline">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/market.jpg" class="w-full h-48 object-cover" alt="Marketplace Access">
+                        <div class="card-content">
+                            <h3 class="text-xl font-semibold text-gray-800">Marketplace Access</h3>
+                            <p class="text-gray-600">Connect directly with buyers and get fair prices for your produce.</p>
+                            <a href="#" class="text-green-600 hover:underline">Explore Market</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="/images.jpeg" class="w-full h-48 object-cover" alt="Knowledge Hub">
+                        <div class="card-content">
+                            <h3 class="text-xl font-semibold text-gray-800">Knowledge Hub</h3>
+                            <p class="text-gray-600">Access to agricultural best practices and expert advice.</p>
+                            <a href="#" class="text-green-600 hover:underline">Start Learning</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="item bg-white" id="content4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="section-title text-center mb-12">How It Works</h2>
+                <div class="flex flex-col gap-8">
+                    <div class="flex gap-6 items-start">
+                        <div class="text-4xl font-bold text-green-600">1</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Sign Up</h3>
+                            <p class="text-gray-600">Create your account and set up your farm profile.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 items-start">
+                        <div class="text-4xl font-bold text-green-600">2</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Explore Tools</h3>
+                            <p class="text-gray-600">Discover our range of smart farming tools and resources.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 items-start">
+                        <div class="text-4xl font-bold text-green-600">3</div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Implement Solutions</h3>
+                            <p class="text-gray-600">Apply sustainable practices and watch your farm thrive.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="item bg-gray-100" id="content5">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="section-title text-center mb-12">What Farmers Say</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="card text-center pt-5">
+                        <img src="/8d77e623abb5e8bf9c0a521d82402c97rg.jpg" class="w-24 h-24 rounded-full mx-auto mb-4" alt="Farmer Testimonial 1" style="border-radius: 50%;">
+                        <p class="text-gray-800 mb-4">"Farmtech has revolutionized the way we manage our crops. The increase in yield and efficiency is remarkable!"</p>
+                        <div class="text-green-600 font-semibold">Jane Doe, Small-scale Farmer</div>
+                    </div>
+                    <div class="card text-center pt-5">
+                        <img src="/download.jpeg" class="w-24 h-24 rounded-full mx-auto mb-4" alt="Farmer Testimonial 2" style="border-radius: 50%;">
+                        <p class="text-gray-800 mb-4">"The marketplace feature has opened up new opportunities for us to sell directly to consumers. It's been a game-changer."</p>
+                        <div class="text-green-600 font-semibold">John Smith, Organic Farmer</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="item bg-green-600 text-white text-center py-12" id="content6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-6">Ready to Transform Your Farm?</h2>
+                <p class="text-xl mb-8">Join thousands of farmers who are already benefiting from our innovative solutions.</p>
+                <a href="#" class="bg-white text-green-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300">Get Started Now</a>
+            </div>
+        </div>
+
+        <footer class="item bg-gray-800 text-white py-8" id="footer">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Farmtech</h3>
+                    <p>Empowering farmers with innovative technology.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-green-400">Home</a></li>
+                        <li><a href="#" class="hover:text-green-400">About Us</a></li>
+                        <li><a href="#" class="hover:text-green-400">Services</a></li>
+                        <li><a href="#" class="hover:text-green-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                    <p>123 Farm Road, Agriville</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>Email: info@farmtech.com</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-green-400">Facebook</a>
+                        <a href="#" class="hover:text-green-400">Twitter</a>
+                        <a href="#" class="hover:text-green-400">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

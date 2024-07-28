@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmtech - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            background-image: url(/deepak-kumar-sAe8RXxkQzw-unsplash.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            
+        }
+
+        .container {
+            display: grid;
+            min-height: 100vh;
+            grid-template-areas:
+                "header"
+                "content"
+                "footer";
+            grid-template-columns: 1fr;
+            grid-template-rows: auto 1fr auto;
+        }
+
+        .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        #header {
+            grid-area: header;
+            background-color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card {
+            background-color: #ffffff96;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333333;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="item flex items-center justify-between p-4" id="header">
+            <div class="font-bold text-2xl text-green-600">Farmtech</div>
+            <nav class="hidden md:flex">
+                <ul class="flex gap-6 text-lg">
+                    <li><a href="#" class="hover:text-green-600">Home</a></li>
+                    <li><a href="#" class="hover:text-green-600">Dashboard</a></li>
+                    <li><a href="#" class="hover:text-green-600">Marketplace</a></li>
+                    <li><a href="#" class="hover:text-green-600">Login</a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden">Menu</button>
+        </header>
+
+        <div class="item">
+            <div class="card">
+                <h2 class="card-title">Login to Farmtech</h2>
+                <form action="/login" method="POST">
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 mb-2">Email</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-green-600" placeholder="your-email@example.com">
+                    </div>
+                    <div class="mb-6">
+                        <label for="password" class="block text-gray-700 mb-2">Password</label>
+                        <input type="password" id="password" name="password" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-green-600" placeholder="••••••••">
+                    </div>
+                    <button type="submit" class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition duration-300">Login</button>
+                </form>
+                <div class="mt-4 text-center">
+                    <p class="text-gray-600">Don't have an account? <a href="/signup" class="text-blue-700 hover:underline">Sign Up</a></p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="item bg-gray-800 text-white py-8" id="footer">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Farmtech</h3>
+                    <p>Empowering farmers with innovative technology.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-green-400">Home</a></li>
+                        <li><a href="#" class="hover:text-green-400">About Us</a></li>
+                        <li><a href="#" class="hover:text-green-400">Services</a></li>
+                        <li><a href="#" class="hover:text-green-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                    <p>123 Farm Road, Agriville</p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>Email: info@farmtech.com</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-green-400">Facebook</a>
+                        <a href="#" class="hover:text-green-400">Twitter</a>
+                        <a href="#" class="hover:text-green-400">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
